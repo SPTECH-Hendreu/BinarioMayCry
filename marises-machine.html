@@ -1,85 +1,100 @@
+
 <!DOCTYPE html>
-<!-- saved from url=(0066)file:///C:/Users/Marise%20Miranda/Downloads/Marises%20Machine.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="pt-br">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Binary May Cry</title>
+    <style type="text/css">
+        body {
+            background-image: url('file:///C:/Users/User/Desktop/Faculdade/BinarioMayCry/src/hexa.jpg');
+            background-size: cover; /* Esticar imagem */
+            background-repeat: no-repeat; /* A imagem nao repete */
+        }
+        @font-face {
+                font-family:"Motivation";
+                src: url(https://1drv.ms/u/c/0b3a4ef6c48029e2/Eb9l4jKEsVBNthBnFc86THsBjiy3rp7wUl0gUqEOt8g9QA?e=enuANb) format("truetype");
+        }
+        p.customfont{
+                font-family:"Motivation";
+        }
+    </style>
 </head>
 
-<body bgcolor="#00ffff">
-    
+<body class="customfont">
+
     <center>
-        <h1>Marise's Machine</h1>
+        <h1 style="color: #EBD3F8;" class="customfont">Binary May Cry</h1>
+        <span style="color: #EBD3F8;">Based on Marise's Machine</span>
 
-<br><br>
+        <br><br>
 
-        <h3>Decimal</h3>
+        <h3 style="color: #EBD3F8;">Decimal</h3>
         <input id="demo1" type="text" placeholder="Digite o valor em decimal">
 
-<br><br>
+        <br><br>
 
-        <h3>converter para:</h3>
+        <h3 style="color: #EBD3F8;">converter para:</h3>
 
+        <input onclick="aparecer_octal()" type="checkbox" ><b style="color: #EBD3F8;">Octal</b>
+        <br>
+        <div style="display: none; border-radius: 5px; padding: 5px; color: rgb(0, 0, 0); width: 15%; height: 40px; font-weight: 500;"
+             id="demo2"></div>
 
-        <input onclick="aparecer_octal()" type="checkbox"><b>Octal</b>
-<br>
-        <div style="display: none; background-color: #dcdcdc; border-radius: 5px; padding: 5px; color: rgb(0, 0, 0); width: 15%; height: 40px; font-weight: 500;" id="demo2"></div>
+        <br><br>
 
-<br><br>
+        <input onclick="aparecer_hexa()" type="checkbox"><b style="color: #EBD3F8;">Hexadecimal</b>
+        <br>
+        <div style="display: none; border-radius: 5px; padding: 5px; color: rgb(7, 7, 7); width: 15%; height: 40px; font-weight: 500;"
+             id="demo3"></div>
 
-        <input onclick="aparecer_hexa()" type="checkbox"><b>Hexadecimal</b>
-<br>
-        <div style="display: none; background-color: #dcdcdc; border-radius: 5px; padding: 5px; color: rgb(7, 7, 7); width: 15%; height: 40px; font-weight: 500;" id="demo3"></div>
-        
-<br><br>
+        <br><br>
 
-        <input onclick="aparecer_bin()" type="checkbox"><b>Binário</b>
-<br>
-        <div style="display: none; background-color: #dcdcdc; border-radius: 5px; padding: 5px; color: rgb(5, 5, 5); width: 60%; height: 50px; font-weight: 500;" id="demo4"></div>
+        <input onclick="aparecer_bin()" type="checkbox"><b style="color: #EBD3F8;">Binário</b>
+        <br>
+        <div style="display: none; border-radius: 5px; padding: 5px; color: rgb(5, 5, 5); width: 60%; height: 50px; font-weight: 500;"
+             id="demo4"></div>
 
-<br><br>
+        <br><br>
 
-<button onclick="converter()">Converter</button>
+        <button onclick="converter()">Converter</button>
     </center>
 
+    <script>
+        function converter() {
+            var decimal = Number(demo1.value);
 
+            let octal = decimal.toString(8);
 
+            let hexadecimal = decimal.toString(16);
 
-<script>
+            let binaria = decimal.toString(2);
 
-function converter() {
-    
-    var decimal = Number (demo1.value);
+            console.log(decimal);
+            console.log(octal);
+            console.log(hexadecimal);
+            console.log(binaria);
 
-let octal = decimal.toString(8);
+            document.getElementById("demo1").innerHTML = ` ${decimal}`;
+            document.getElementById("demo2").innerHTML = ` ${octal}`;
+            document.getElementById("demo3").innerHTML = ` ${hexadecimal}`;
+            document.getElementById("demo4").innerHTML = ` ${binaria}`;
+        }
 
-let hexadecimal = decimal.toString(16);
+        function aparecer_bin() {
+            demo4.style.display = 'block'
+        }
 
-let binaria = decimal.toString(2);
+        function aparecer_hexa() {
+            demo3.style.display = 'block'
+        }
 
-console.log (decimal);
-console.log (octal);
-console.log (hexadecimal);
-console.log (binaria);
+        function aparecer_octal() {
+            demo2.style.display = 'block'
+        }
+        document.bgColor = "#2E073F";
+    </script>
+</body>
 
-document.getElementById("demo1").innerHTML = ` ${decimal}`;
-document.getElementById("demo2").innerHTML = ` ${octal}`;
-document.getElementById("demo3").innerHTML = ` ${hexadecimal}`;
-document.getElementById("demo4").innerHTML = ` ${binaria}`;
-
-
-}
-
-function aparecer_bin() {
-    demo4.style.display = 'block'
-}
-
-function aparecer_hexa() {
-    demo3.style.display = 'block'
-}
-
-function aparecer_octal() {
-    demo2.style.display = 'block'
-}
-document.bgColor = "#00ffff";
-</script></body></html>
+</html>
