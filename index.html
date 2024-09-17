@@ -1,85 +1,263 @@
 <!DOCTYPE html>
-<!-- saved from url=(0066)file:///C:/Users/Marise%20Miranda/Downloads/Marises%20Machine.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<html lang="en">
+
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="index.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+                crossorigin="anonymous">
 </head>
+<body >
 
-<body bgcolor="#00ffff">
-    
-    <center>
-        <h1>Marise's Machine</h1>
+        <center>
+                <h1>Death By A Thousand Cuts</h1>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="conversor-tab" data-bs-toggle="tab"
+                                        data-bs-target="#conversor-tab-pane" type="button" role="tab"
+                                        aria-controls="conversor-tab-pane" aria-selected="true">Conversor de
+                                        Bases</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="bhaskara-tab" data-bs-toggle="tab"
+                                        data-bs-target="#bhaskara-tab-pane" type="button" role="tab"
+                                        aria-controls="bhaskara-tab-pane" aria-selected="false">Bhaskara</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="calorimetria-tab" data-bs-toggle="tab"
+                                        data-bs-target="#calorimetria-tab-pane" type="button" role="tab"
+                                        aria-controls="calorimetria-tab-pane"
+                                        aria-selected="false">Calorimetria</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="catetos-tab" data-bs-toggle="tab"
+                                        data-bs-target="#catetos-tab-pane" type="button" role="tab"
+                                        aria-controls="catetos-tab-pane" aria-selected="false">Catetos</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="eq-prim-grau-tab" data-bs-toggle="tab"
+                                        data-bs-target="#eq-prim-grau-tab-pane" type="button" role="tab"
+                                        aria-controls="eq-prim-grau-tab-pane" aria-selected="false">Equação do primeiro
+                                        Grau</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="juros-comp-tab" data-bs-toggle="tab"
+                                        data-bs-target="#juros-comp-tab-pane" type="button" role="tab"
+                                        aria-controls="juros-comp-tab-pane" aria-selected="false">Juro Simples e
+                                        Compostos</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="montante-tab" data-bs-toggle="tab"
+                                        data-bs-target="#montante-tab-pane" type="button" role="tab"
+                                        aria-controls="montante-tab-pane" aria-selected="false">Montante</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="medias-tab" data-bs-toggle="tab"
+                                        data-bs-target="#medias-tab-pane" type="button" role="tab"
+                                        aria-controls="medias-tab-pane" aria-selected="false">Medias</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="regra-tres-tab" data-bs-toggle="tab"
+                                        data-bs-target="#regra-tres-tab-pane" type="button" role="tab"
+                                        aria-controls="regra-tres-tab-pane" aria-selected="false">Regra de três</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                                <button class="nav-link disabled" id="ir-tab" data-bs-toggle="tab"
+                                        data-bs-target="#ir-tab-pane" type="button" role="tab"
+                                        aria-controls="ir-tab-pane" aria-selected="false">Imposto de Renda</button>
+                        </li>
+                </ul>
 
-<br><br>
+                <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="conversor-tab-pane" role="tabpanel"
+                                aria-labelledby="conversor-tab" tabindex="0">
+                                <h3>Selecione a base</h3>
+                                <select class="form-select" id="selectConvertBase" aria-label="Default select example">
+                                        <option value="binary">Binário</option>
+                                        <option value="octal">Octal</option>
+                                        <option value="decimal" selected>Decimal</option>
+                                        <option value="hexadecimal">Hexadecimal</option>
+                                </select>
+                                <input id="inpValConvert" value="0" />
 
-        <h3>Decimal</h3>
-        <input id="demo1" type="text" placeholder="Digite o valor em decimal">
+                                <br><br>
+                                <div>
+                                        <strong>Binário: </strong> <span id="convertedValBinary"></span>
+                                </div>
+                                <div>
+                                        <strong>Octal: </strong> <span id="convertedValOctal"></span>
+                                </div>
+                                <div>
+                                        <strong>Decimal: </strong> <span id="convertedValDecimal"></span>
+                                </div>
+                                <div>
+                                        <strong>Hexadecimal: </strong> <span id="convertedValHexadecimal"></span>
+                                </div>
+                                <button onclick="converter()">Converter</button>
+                        </div>
+                        <div class="tab-pane fade" id="bhaskara-tab-pane" role="tabpanel" aria-labelledby="bhaskar-tab"
+                                tabindex="0">
+                                a <input type="number" id="iptBhaskaraA">
+                                <br>
+                                b <input type="number" id="iptBhaskaraB">
+                                <br>
+                                c <input type="number" id="iptBhaskaraC">
+                                <br>
+                                <button onclick="bhaskara()">Calcular</button>
 
-<br><br>
+                                <div id="divMsgBhaskara"></div>
+                        </div>
+                        <div class="tab-pane fade" id="calorimetria-tab-pane" role="tabpanel"
+                                aria-labelledby="calorimetria-tab" tabindex="0">Inserir Massa: <br>
+                                <input type="number" id="iptCalorimetriaMassa"><br><br>
+                                Inserir o calor específico: <br>
+                                <input type="number" id="iptCalorimetriaCalor"><br><br>
+                                Inserir o ΔT: <br>
+                                <input type="number" id="iptCalorimetriaDelta"><br><br>
+                                <button onclick="calorimetria()">Calcular</button><br>
+                                <div id="divMsgCalorimetria">
 
-        <h3>converter para:</h3>
+                                </div>
+                        </div>
+                        <div class="tab-pane fade" id="catetos-tab-pane" role="tabpanel" aria-labelledby="catetos-tab"
+                                tabindex="0">
+                                <h1>Instruções</h1>
+                                <h3 strong> Deixar um campo em branco para que seja realizado o calculo: </h3>
+                                <hr>
+                                <br><br>
+
+                                Cateto A <br>
+                                <input type="number" id="iptCatA"><br><br>
+                                Caeteto B <br>
+                                <input type="number" id="iptCatB"><br><br>
+                                Hipotenusa <br>
+                                <input type="number" id="iptHip"><br><br>
+                                <button onclick="catetos()">Calcular</button><br><br>
+
+                                <div id="divMsgCatetos">
+
+                                </div>
+                        </div>
+                        <div class="tab-pane fade" id="eq-prim-grau-tab-pane" role="tabpanel"
+                                aria-labelledby="eeq-prim-grau-tab" tabindex="0">levando em consideração que: (Numero)X
+                                (+ ou -) (Numero) (+ ou -) Numero = 0
+                                <br>
+                                x <input type="number" id="iptEquacaoPrimeiroGrauX">
+                                <br>
+                                Numero <input type="number" id="iptEquacaoPrimeiroGrauA">
+                                <br>
+                                Numero <input type="number" id="iptEquacaoPrimeiroGrauB">
+                                <br>
+                                <button onclick="equacaoPrimeiroGrau()">Calcular</button>
+
+                                <div id="divMsgEquacaoPrimeiroGrau"></div>
+                        </div>
+                        <div class="tab-pane fade" id="juros-comp-tab-pane" role="tabpanel"
+                                aria-labelledby="juros-comp-tab" tabindex="0">
+
+                                <h1>Juros Simples</h1>
+                                <hr>
+                                Valor Principal: <br>
+                                <input type="number" id="iptValJuros"><br><br>
+                                Taxa de Juros: <br>
+                                <input type="number" id="iptJuros"><br><br>
+                                Periodo de Tempo: <br>
+                                <input type="number" id="iptTempoJuros"><br><br>
+                                <button onclick="jurosSimples()">Calcular</button>
+
+                                <div id="divJurosSimples">
+
+                                </div>
+
+                                <h1>Juros Compostos</h1>
+                                <hr>
+                                Capital: <br>
+                                <input type="number" id="iptCapitalJuros"><br><br>
+                                Taxa de Juros: <br>
+                                <input type="number" id="iptJurosComp"><br><br>
+                                Periodo de Tempo: <br>
+                                <input type="number" id="iptTempoMesJuros"><br><br>
+
+                                <button onclick="jurosCompostos()">Calcular</button>
+                                <div id="divJurosComposto"></div>
+                        </div>
+                        <div class="tab-pane fade" id="montante-tab-pane" role="tabpanel" aria-labelledby="montante-tab"
+                                tabindex="0">
+                                Capital <input type="number" id="iptMontantecapital">
+                                <br>
+                                Juros <input type="number" id="iptMontantejuros">
+                                <br>
+                                <button onclick="Montante()">Calcular</button>
+                                <br>
+                                <div id="divMsgMontante"></div>
+                        </div>
+                        <div class="tab-pane fade" id="medias-tab-pane" role="tabpanel" aria-labelledby="medias-tab"
+                                tabindex="0">
 
 
-        <input onclick="aparecer_octal()" type="checkbox"><b>Octal</b>
-<br>
-        <div style="display: none; background-color: #dcdcdc; border-radius: 5px; padding: 5px; color: rgb(0, 0, 0); width: 15%; height: 40px; font-weight: 500;" id="demo2"></div>
+                                Número 1:<br>
+                                <input type="number" id="iptNumMedia"><br><br>
+                                Número 2:<br>
+                                <input type="number" id="iptNumdoisMedia"> <br><br>
+                                <button onclick="calcularMedia()">Calcular</button>
 
-<br><br>
+                                <div id="divMsgMedia">
 
-        <input onclick="aparecer_hexa()" type="checkbox"><b>Hexadecimal</b>
-<br>
-        <div style="display: none; background-color: #dcdcdc; border-radius: 5px; padding: 5px; color: rgb(7, 7, 7); width: 15%; height: 40px; font-weight: 500;" id="demo3"></div>
-        
-<br><br>
+                                </div>
 
-        <input onclick="aparecer_bin()" type="checkbox"><b>Binário</b>
-<br>
-        <div style="display: none; background-color: #dcdcdc; border-radius: 5px; padding: 5px; color: rgb(5, 5, 5); width: 60%; height: 50px; font-weight: 500;" id="demo4"></div>
+                        </div>
+                        <div class="tab-pane fade" id="regra-tres-tab-pane" role="tabpanel"
+                                aria-labelledby="regra-tres-tab" tabindex="0"> REGRA DE 3
+                                <br>
+                                x1 <input type="number" id="iptRegraX1">
+                                <br>
+                                x2 <input type="number" id="iptRegraX2">
+                                <br>
+                                y1 <input type="number" id="iptRegraY1">
+                                <br>
+                                <button onclick="regraDeTres()">Calcular</button>
 
-<br><br>
-
-<button onclick="converter()">Converter</button>
-    </center>
-
-
-
-
-<script>
-
-function converter() {
-    
-    var decimal = Number (demo1.value);
-
-let octal = decimal.toString(8);
-
-let hexadecimal = decimal.toString(16);
-
-let binaria = decimal.toString(2);
-
-console.log (decimal);
-console.log (octal);
-console.log (hexadecimal);
-console.log (binaria);
-
-document.getElementById("demo1").innerHTML = ` ${decimal}`;
-document.getElementById("demo2").innerHTML = ` ${octal}`;
-document.getElementById("demo3").innerHTML = ` ${hexadecimal}`;
-document.getElementById("demo4").innerHTML = ` ${binaria}`;
+                                <div id="divMsgRegraDeTres"></div>
+                        </div>
+                        <div class="tab-pane fade" id="ir-tab-pane" role="tabpanel" aria-labelledby="ir-tab"
+                                tabindex="0">ir</div>
+                </div>
 
 
-}
 
-function aparecer_bin() {
-    demo4.style.display = 'block'
-}
 
-function aparecer_hexa() {
-    demo3.style.display = 'block'
-}
 
-function aparecer_octal() {
-    demo2.style.display = 'block'
-}
-document.bgColor = "#00ffff";
-</script></body></html>
+        </center>
+
+
+
+
+        <script>
+
+                function converter() {
+                        const calc = new Calculadora();
+                        const baseOriginal = selectConvertBase.value;
+                        const iptValue = calc.convertToDecimal(inpValConvert.value, baseOriginal);
+
+                        convertedValBinary.innerHTML = ` ${calc.convertToBaseFinal(iptValue, 'binary')}`;
+                        convertedValOctal.innerHTML = ` ${calc.convertToBaseFinal(iptValue, 'octal')}`;
+                        convertedValDecimal.innerHTML = ` ${calc.convertToBaseFinal(iptValue, 'decimal')}`;
+                        convertedValHexadecimal.innerHTML = ` ${calc.convertToBaseFinal(iptValue, 'hexadecimal')}`;
+                }
+        </script>
+</body>
+
+</html>
+
+<style>
+        @font-face {
+                font-family: 'DevilMayCry';
+                src: url(DevilMayCry.ttf);
+        }
+</style>

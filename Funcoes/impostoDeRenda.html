@@ -56,10 +56,6 @@
     var aliquota2 = 0.15;
     var aliquota3 = 0.225;
     var aliquota4 = 0.275;
-    var deduzir = 158.4;
-    var deduzir2 = 381.44;
-    var deduzir3 = 662.77;
-    var deduzir4 = 896.00;
 
     function calcular(){
 
@@ -69,19 +65,16 @@
         if (salario <= 0){
         alert(`to pobre`)
         
-    } else if (salario <= 2259.20){
+        } else if (salario <= 2259.20){
             alert(`isento`)
             
         } else if (salario <= 2826.65){
-            ir = salario * aliquota - deduzir
+            ir = (salario * aliquota) 
             alert(ir)
         } else if (salario <=  3751.05){
             alert(`socorro`)
             ir = salario * aliquota2 - deduzir2
         } else if (salario <= 4664.68){
-            alert(`Amigo da Floresta
-PASSIVA
-Ivern não pode atacar ou ser atacado por monstros não épicos. Ele pode criar bosques mágicos que crescem ao longo do tempo em acampamentos da selva. Quando o bosque estiver em seu tamanho final, Ivern pode libertar os monstros para receber ouro e experiência.`)
             salario *= salario 
         } else {
             alert(`te amo vivian`)
