@@ -19,21 +19,47 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
 
-  <body class="glass-bkg" style="padding: 100px; min-height: 100vh; max-height: fit-content; overflow: auto;">
-    <video autoplay muted loop id="background-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-      <source src="fundo.mp4" type="video/mp4">
+  <body
+    class="glass-bkg"
+    style="
+      padding: 100px;
+      min-height: 100vh;
+      max-height: fit-content;
+      overflow: auto;
+    "
+  >
+    <video
+      autoplay
+      muted
+      loop
+      id="background-video"
+      style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      "
+    >
+      <source src="fundo.mp4" type="video/mp4" />
       Seu navegador não suporta o elemento vídeo.
     </video>
     <center>
       <div class="glass-bkg">
-        <h3 style="color: #f5f5f5;">
+        <h3 style="color: #f5f5f5">
           <span class="binary-effect">Binary The Light</span>
           <br />
-          <small class="text-muted" style="color: #f5f5f5;">Deep Within</small>
+          <small class="text-muted" style="color: #f5f5f5">Deep Within</small>
         </h3>
       </div>
 
-      <ul class="nav nav-tabs " id="myTab" role="tablist" style="display: flex; justify-content: center;">
+      <ul
+        class="nav nav-tabs"
+        id="myTab"
+        role="tablist"
+        style="display: flex; justify-content: center"
+      >
         <li class="nav-item" role="presentation">
           <button
             class="nav-link active glass-bkg"
@@ -176,7 +202,7 @@
         </li>
       </ul>
 
-      <div class="tab-content" id="myTabContent" style="color: lightgray;">
+      <div class="tab-content" id="myTabContent" style="color: lightgray">
         <div
           class="tab-pane fade show active"
           id="conversor-tab-pane"
@@ -264,7 +290,10 @@
                   id="iptBhaskaraC"
                 />
               </div>
-              <span class="input-group-text" style="width: fit-content; margin-top: 10px;">
+              <span
+                class="input-group-text"
+                style="width: fit-content; margin-top: 10px"
+              >
                 <math display="block">
                   <mfrac linethickness="1">
                     <mn>X² + X + Y = 0</mn>
@@ -272,7 +301,7 @@
                 </math>
               </span>
             </div>
-            <button class="btn-primary  glass-btn" onclick="bhaskara()">
+            <button class="btn-primary glass-btn" onclick="bhaskara()">
               Calcular
             </button>
           </div>
@@ -316,10 +345,7 @@
               />
               <label for="iptCalorimetriaDelta">Inserir o ΔT</label>
             </div>
-            <button
-              class="btn-primary  glass-btn"
-              onclick="calorimetria()"
-            >
+            <button class="btn-primary glass-btn" onclick="calorimetria()">
               Calcular
             </button>
             <div id="divMsgCalorimetria"></div>
@@ -352,7 +378,7 @@
             </div>
           </div>
           <br /><br />
-          <button class= "glass-btn" onclick="catetos()">Calcular</button>
+          <button class="glass-btn" onclick="catetos()">Calcular</button>
 
           <div id="divMsgCatetos"></div>
         </div>
@@ -404,7 +430,7 @@
                 </math>
               </span>
             </div>
-            <button onclick="equacaoPrimeiroGrau()" class= "glass-btn">
+            <button onclick="equacaoPrimeiroGrau()" class="glass-btn">
               Calcular
             </button>
 
@@ -447,10 +473,7 @@
               />
               <label for="iptTempoJuros">Período de Tempo</label>
             </div>
-            <button
-              class="btn-primary  glass-btn"
-              onclick="jurosSimples()"
-            >
+            <button class="btn-primary glass-btn" onclick="jurosSimples()">
               Calcular
             </button>
           </div>
@@ -486,10 +509,7 @@
               />
               <label for="iptTempoMesJuros">Periodo de Tempo</label>
             </div>
-            <button
-              class="btn-primary  glass-btn"
-              onclick="jurosCompostos()"
-            >
+            <button class="btn-primary glass-btn" onclick="jurosCompostos()">
               Calcular
             </button>
           </div>
@@ -522,7 +542,7 @@
               />
               <label for="iptMontantejuros">Taxa de Juros</label>
             </div>
-            <button class="btn-primary  glass-btn" onclick="Montante()">
+            <button class="btn-primary glass-btn" onclick="Montante()">
               Calcular Montante
             </button>
             <br />
@@ -555,10 +575,7 @@
               />
               <label for="iptNumdoisMedia">Número 2</label>
             </div>
-            <button
-              class="btn-primary  glass-btn"
-              onclick="calcularMedia()"
-            >
+            <button class="btn-primary glass-btn" onclick="calcularMedia()">
               Calcular
             </button>
           </div>
@@ -572,40 +589,51 @@
           tabindex="0"
         >
           REGRA DE 3
-          <div style="display: flex; gap: 12px; position: relative; max-width: fit-content;">
-            <div style="position: absolute; top: 34%; left: 46%;">=</div>
-            <div style="display: flex; gap: 8px; flex-direction: column;">
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              position: relative;
+              max-width: fit-content;
+            "
+          >
+            <div style="position: absolute; top: 34%; left: 46%">=</div>
+            <div style="display: flex; gap: 8px; flex-direction: column">
               <input
-                  type="number"
-                  aria-label="First name"
-                  class="form-control"
-                  id="iptRegraX1"
-                  style="width: 56px;"
-                />
-                <input
-                  type="number"
-                  aria-label="First name"
-                  class="form-control"
-                  id="iptRegraX2"
-                  style="width: 56px;"
-                />
+                type="number"
+                aria-label="First name"
+                class="form-control"
+                id="iptRegraX1"
+                style="width: 56px"
+              />
+              <input
+                type="number"
+                aria-label="First name"
+                class="form-control"
+                id="iptRegraX2"
+                style="width: 56px"
+              />
             </div>
-            <div style="display: flex; gap: 8px; flex-direction: column;">
+            <div style="display: flex; gap: 8px; flex-direction: column">
               <input
-                    type="number"
-                    aria-label="First name"
-                    class="form-control"
-                    id="iptRegraY1"
-                    style="width: 56px;"
-                />
-                <span class="input-group-text" style="width: 56px; text-align: center;">X</span>
+                type="number"
+                aria-label="First name"
+                class="form-control"
+                id="iptRegraY1"
+                style="width: 56px"
+              />
+              <span
+                class="input-group-text"
+                style="width: 56px; text-align: center"
+                >X</span
+              >
             </div>
           </div>
           <br />
           <button
-            class="btn-primary  glass-btn"
+            class="btn-primary glass-btn"
             onclick="regraDeTres()"
-            style="margin-bottom: 10px;"
+            style="margin-bottom: 10px"
           >
             Calcular
           </button>
@@ -620,7 +648,7 @@
           tabindex="0"
         >
           <h1>Cálculo do Imposto de Renda Anual Brasileiro</h1>
-          <div class="inputs-wrapper" style="margin-bottom: 10px;">
+          <div class="inputs-wrapper" style="margin-bottom: 10px">
             <div class="form-floating">
               <input
                 type="number"
@@ -630,8 +658,8 @@
               />
               <label for="iptIncome">Renda Anual:</label>
             </div>
-          <label for="frequency">Frequência:</label>
-          <select
+            <label for="frequency">Frequência:</label>
+            <select
               class="form-select"
               id="iptFrequency"
               aria-label="Default select example"
@@ -640,13 +668,13 @@
               <option value="mensal">Mensal</option>
             </select>
 
-          <br />
-          <button
-            class="btn-primary  glass-btn"
-            onclick="calcularImpostoDeRenda()"
-          >
-            Calcular Imposto
-          </button>
+            <br />
+            <button
+              class="btn-primary glass-btn"
+              onclick="calcularImpostoDeRenda()"
+            >
+              Calcular Imposto
+            </button>
           </div>
           <div id="divImpostoDeRenda"></div>
         </div>
@@ -654,8 +682,8 @@
     </center>
 
     <script>
-     inpValConvert.addEventListener('input', ( ev ) => {
-      const calc = new Calculadora();
+      inpValConvert.addEventListener("input", (ev) => {
+        const calc = new Calculadora();
         const baseOriginal = selectConvertBase.value;
         const iptValue = calc.convertToDecimal(
           inpValConvert.value,
@@ -677,8 +705,8 @@
         convertedValHexadecimal.innerHTML = ` ${calc.convertToBaseFinal(
           iptValue,
           "hexadecimal"
-        )}`; 
-     })
+        )}`;
+      });
     </script>
   </body>
 </html>

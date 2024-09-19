@@ -57,15 +57,15 @@ function bhaskara() {
 
     let saidaPositivo = x1Bhaskara;
     let saidaNegativo = x2Bhaskara;
-    let saidaPositivoOut = '';
-    let saidaNegativoOut = '';
+    let saidaPositivoOut = "";
+    let saidaNegativoOut = "";
 
     if (x1Bhaskara < 0) {
-       saidaPositivoOut = `Raiz negativa, Ou seja raiz imaginaria ${saidaPositivo} Continue com outro valor!`;
+      saidaPositivoOut = `Raiz negativa, Ou seja raiz imaginaria ${saidaPositivo} Continue com outro valor!`;
     }
-    
+
     if (x2Bhaskara < 0) {
-       saidaNegativoOut = `Raiz negativa, Ou seja raiz imaginaria ${saidaNegativo} Continue com outro valor!`;
+      saidaNegativoOut = `Raiz negativa, Ou seja raiz imaginaria ${saidaNegativo} Continue com outro valor!`;
     }
 
     divMsgBhaskara.innerHTML = `Raiz1: ${saidaPositivoOut} 
@@ -87,32 +87,32 @@ function calorimetria() {
 }
 // função catetos
 function catetos() {
-  console.log("adfjadklsfl")
+  console.log("adfjadklsfl");
   let catA = Number(iptCatA.value);
   let catB = Number(iptCatB.value);
   let hip = Number(iptHip.value);
 
-if (hip == 0 || hip == ""){
-  let conta = Math.sqrt(Math.pow(catA, 2) + Math.pow(catB, 2));
-  divMsgCatetos.innerHTML = conta;
-  return;
-}
-if (hip < catA || hip < catB) {
-  divMsgCatetos.innerHTML = `A hipotenusa não pode ser menor que os catetos!`;
-  return;
-}
-if (catA == 0) {
-  let conta = Math.sqrt(Math.pow(hip, 2) - Math.pow(catB, 2));
+  if (hip == 0 || hip == "") {
+    let conta = Math.sqrt(Math.pow(catA, 2) + Math.pow(catB, 2));
+    divMsgCatetos.innerHTML = conta;
+    return;
+  }
+  if (hip < catA || hip < catB) {
+    divMsgCatetos.innerHTML = `A hipotenusa não pode ser menor que os catetos!`;
+    return;
+  }
+  if (catA == 0) {
+    let conta = Math.sqrt(Math.pow(hip, 2) - Math.pow(catB, 2));
 
-  divMsgCatetos.innerHTML = conta;
-  return;
-}
-if (catB == 0) {
-  let conta = Math.sqrt(Math.pow(hip, 2) - Math.pow(catA, 2));
+    divMsgCatetos.innerHTML = conta;
+    return;
+  }
+  if (catB == 0) {
+    let conta = Math.sqrt(Math.pow(hip, 2) - Math.pow(catA, 2));
 
-  divMsgCatetos.innerHTML = conta;
-  return;
-}
+    divMsgCatetos.innerHTML = conta;
+    return;
+  }
 }
 
 // equaçao primeiro grau
@@ -131,7 +131,7 @@ function jurosSimples() {
   let juros = Number(iptJuros.value);
   let tempo = Number(iptTempoJuros.value);
 
-  let conta = (valor * tempo) * (juros / 100 + 1);
+  let conta = valor * tempo * (juros / 100 + 1);
 
   divJurosSimples.innerHTML = `Seu valor de R$${valor}, com juros de ${juros}% ao mês, aplicado por ${tempo} meses renderá aproximadamente R$${conta}`;
 }
@@ -166,9 +166,8 @@ function regraDeTres() {
   let y1 = Number(iptRegraY1.value);
   let y2 = Number("1");
 
-  
   let resultadoEquacao2 = x2 * y1;
-  let resultadoEquacao1 = y2 
+  let resultadoEquacao1 = y2;
 
   divMsgRegraDeTres.innerHTML = `
     <math display="block"><mfrac linethickness="1">
@@ -183,32 +182,34 @@ function calcularImpostoDeRenda() {
   let imposto = 0;
   let income = Number(iptIncome.value);
   let frequency = iptFrequency.value;
-  
-  console.log("1", imposto)
+
+  console.log("1", imposto);
   if (income <= 19995) {
-    imposto = (income * 0.075);
-    console.log("2", imposto)
+    imposto = income * 0.075;
+    console.log("2", imposto);
   } else if (income <= 39995) {
-    imposto = (19995 * 0.075) + ((income - 19995) * 0.15);
-    console.log("3", imposto)
+    imposto = 19995 * 0.075 + (income - 19995) * 0.15;
+    console.log("3", imposto);
   } else if (income <= 80000) {
-    imposto = (19995 * 0.075) + (20000 * 0.15) + ((income - 39995) * 0.225);
-    console.log("4", imposto)
+    imposto = 19995 * 0.075 + 20000 * 0.15 + (income - 39995) * 0.225;
+    console.log("4", imposto);
   } else {
-    imposto = (19995 * 0.075) + (20000 * 0.15) + (40000 * 0.225) + ((income - 80000) * 0.275);
-    console.log("5", imposto)
+    imposto =
+      19995 * 0.075 + 20000 * 0.15 + 40000 * 0.225 + (income - 80000) * 0.275;
+    console.log("5", imposto);
   }
-  
-  if (frequency === 'mensal') {
+
+  if (frequency === "mensal") {
     imposto = imposto / 12;
-    console.log("6", imposto)
+    console.log("6", imposto);
   }
-  console.log("7", imposto)
-  divImpostoDeRenda.innerHTML = `Imposto de renda ${frequency === 'mensal' ? 'mensal' : 'anual'}: R$ ${imposto.toFixed(2)}`;
+  console.log("7", imposto);
+  divImpostoDeRenda.innerHTML = `Imposto de renda ${
+    frequency === "mensal" ? "mensal" : "anual"
+  }: R$ ${imposto.toFixed(2)}`;
 }
 
-
 const rendaAnual = 60000; // renda anual
-const frequencia = 'mensal'; // ou 'anual'
+const frequencia = "mensal"; // ou 'anual'
 
 calcularImpostoDeRenda(rendaAnual, frequencia);
