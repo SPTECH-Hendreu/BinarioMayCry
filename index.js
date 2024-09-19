@@ -167,7 +167,7 @@ function regraDeTres() {
   let y2 = Number("1");
 
   let resultadoEquacao2 = x2 * y1;
-  let resultadoEquacao1 = y2 * x1;
+  let resultadoEquacao1 = (y1 * x2) / x1;
 
   divMsgRegraDeTres.innerHTML = `
     <math display="block"><mfrac linethickness="1">
